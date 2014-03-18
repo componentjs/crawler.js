@@ -1,6 +1,29 @@
 # Component Crawler
 
+http://component-crawler.herokuapp.com/
+
 Crawl github users for components.
+
+## API
+
+### GET /.json
+
+Returns an object:
+
+- `users` - an object of all the users crawled.
+- `components` - array of `component.json`s.
+
+### GET /:user
+
+Return all a user's components.
+
+### PATCH /:user
+
+Update all the components of a user.
+
+### GET /log
+
+Return an event source stream of updates.
 
 ## License
 
