@@ -13,6 +13,10 @@ Returns an object:
 - `users` - an object of all the users crawled.
 - `components` - array of `component.json`s.
 
+### GET /log
+
+Return an event source stream of updates.
+
 ### GET /:user
 
 Return all a user's components.
@@ -21,9 +25,9 @@ Return all a user's components.
 
 Update all the components of a user.
 
-### GET /log
+### GET /:user/:repo
 
-Return an event source stream of updates.
+Return a repo's `component.json`.
 
 ## License
 

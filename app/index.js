@@ -90,6 +90,39 @@ app.use(function* (next) {
   }
 })
 
+// GET a repo
+app.use(function* (next) {
+  var match = /^\/(\w+\/\w+)$/.exec(this.request.path);
+  if (!match) return yield* next;
+
+  var repo = match[1].toLowerCase();
+  var METHODS = 'OPTIONS,HEAD,GET';
+  cors.call(this, METHODS);
+  this.response.set('Cache-Control', 'public, max-age=30');
+
+  switch (this.request.method) {
+    case 'HEAD':
+    case 'GET':
+      var components = crawler.json.components;
+      for (var i = 0; i < components.length; i++) {
+        if (components[i].repo === repo) {
+          this.response.body = components[i];
+          return;
+        }
+      }
+      this.response.status = 404;
+      return;
+    case 'OPTIONS':
+      this.response.set('Allow', METHODS);
+      this.response.status = 204;
+      return;
+    default:
+      this.response.set('Allow', METHODS);
+      this.response.status = 405;
+      return;
+  }
+})
+
 function cors(METHODS) {
   this.response.set('Access-Control-Allow-Origin', '*');
   this.response.set('Access-Control-Allow-Methods', METHODS);
