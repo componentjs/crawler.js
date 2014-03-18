@@ -2,7 +2,7 @@
 
 http://component-crawler.herokuapp.com/
 
-Crawl github users for components.
+Crawl github users for components. Only works with Chrome right now due to a lack of vendor prefixing.
 
 ## API
 
