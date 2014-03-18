@@ -14,7 +14,10 @@ app.use(require('koa-compress')({
   flush: require('zlib').Z_SYNC_FLUSH,
 }));
 app.use(require('koa-etag')());
-app.use(require('koa-json')());
+app.use(require('koa-json')({
+  pretty: false,
+  param: 'pretty',
+}));
 app.use(require('koa-static')(join(__dirname, '..', 'public'), {
   defer: true,
 }));
