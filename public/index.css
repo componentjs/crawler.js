@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #333;
+}
+
+body,
+html,
+#container {
+  height: 100%;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+}
+
+#logs {
+  flex: 1 0 calc(100% - 40px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.log {
+  padding: 5px;
+}
+
+.log:nth-child(odd) {
+  background-color: #f8f8f8;
+}
+
+.log.error {
+  color: red;
+}
+
+#patch {
+  display: flex;
+  flex: 0 0 40px;
+}
+
+#patch > input {
+  flex: 1 0 auto;
+  padding: 5px;
+  border-radius: 0;
+}
+
+#patch > button {
+  flex: 0 0 auto;
+  padding: 5px 10px;
+  border-radius: 0;
+}
