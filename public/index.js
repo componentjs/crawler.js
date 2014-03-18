@@ -3,7 +3,8 @@ var form = document.querySelector('#patch');
 form.addEventListener('submit', function (e) {
   e.preventDefault();
 
-  var name = this.name.value.toLowerCase();
+  var name = this.name.value.toLowerCase().trim();
+  if (!name) return;
   superagent.patch('/' + name).end();
   this.name.value = '';
 })
