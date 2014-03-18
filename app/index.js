@@ -25,6 +25,7 @@ app.use(function* (next) {
 
   var METHODS = 'OPTIONS,HEAD,GET';
   cors.call(this, METHODS);
+  this.response.set('Cache-Control', 'public, max-age=30');
 
   switch (this.request.method) {
     case 'HEAD':
@@ -48,6 +49,8 @@ app.use(function* (next) {
 
   this.req.setTimeout(Infinity);
   this.response.type = 'text/event-stream';
+  this.response.set('Access-Control-Allow-Origin', '*');
+  this.response.set('Cache-Control', 'private');
   var through =
   this.response.body = sse.pipe(new Through()).on('error', this.onerror);
   finished(this, function () {
@@ -63,6 +66,7 @@ app.use(function* (next) {
   var user = match[1].toLowerCase();
   var METHODS = 'OPTIONS,HEAD,GET,PATCH';
   cors.call(this, METHODS);
+  this.response.set('Cache-Control', 'public, max-age=30');
 
   switch (this.request.method) {
     case 'HEAD':
