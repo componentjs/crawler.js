@@ -60,7 +60,7 @@ app.use(function* (next) {
 
 // GET and PATCH a user
 app.use(function* (next) {
-  var match = /^\/(\w+)$/.exec(this.request.path);
+  var match = /^\/([\w-]+)$/.exec(this.request.path);
   if (!match) return yield* next;
 
   var user = match[1].toLowerCase();
@@ -92,7 +92,7 @@ app.use(function* (next) {
 
 // GET a repo
 app.use(function* (next) {
-  var match = /^\/(\w+\/\w+)$/.exec(this.request.path);
+  var match = /^\/([\w-]+\/[\w-\.]+)$/.exec(this.request.path);
   if (!match) return yield* next;
 
   var repo = match[1].toLowerCase();
