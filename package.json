@@ -29,7 +29,8 @@
     "koa-static": "^1.4.3",
     "koa-logger": "^1.2.0",
     "koa-compress": "^1.0.3",
-    "finished": "^1.1.1"
+    "finished": "^1.1.1",
+    "parse-link-header": "~0.1.0"
   },
   "devDependencies": {
     "supertest": "~0.9.2",
