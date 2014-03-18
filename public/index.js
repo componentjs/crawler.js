@@ -9,17 +9,7 @@ form.addEventListener('submit', function (e) {
 })
 
 var logs = document.querySelector('#logs');
-
-listen();
-
-function listen() {
-  var source = new EventSource('/log');
-  source.addEventListener('message', onMessage);
-  // reconnect on disconnects
-  source.addEventListener('error', listen);
-}
-
-function onMessage(e) {
+new EventSource('/log').addEventListener('message', function (e) {
   var data = JSON.parse(e.data);
   if (data.type === 'ignore') return;
   var div = document.createElement('div');
@@ -28,4 +18,4 @@ function onMessage(e) {
   if (data.type === 'error') div.className += ' error';
   logs.appendChild(div);
   div.scrollIntoView();
-}
+})
