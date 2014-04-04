@@ -28,7 +28,7 @@ app.use(function* (next) {
 
   var METHODS = 'OPTIONS,HEAD,GET';
   cors.call(this, METHODS);
-  this.response.set('Cache-Control', 'public, max-age=30');
+  this.response.set('Cache-Control', 'public, max-age=3600');
 
   switch (this.request.method) {
     case 'HEAD':
@@ -69,7 +69,7 @@ app.use(function* (next) {
   var user = match[1].toLowerCase();
   var METHODS = 'OPTIONS,HEAD,GET,PATCH';
   cors.call(this, METHODS);
-  this.response.set('Cache-Control', 'public, max-age=30');
+  this.response.set('Cache-Control', 'public, max-age=3600');
 
   switch (this.request.method) {
     case 'HEAD':
@@ -101,7 +101,7 @@ app.use(function* (next) {
   var repo = match[1].toLowerCase();
   var METHODS = 'OPTIONS,HEAD,GET';
   cors.call(this, METHODS);
-  this.response.set('Cache-Control', 'public, max-age=30');
+  this.response.set('Cache-Control', 'public, max-age=3600');
 
   switch (this.request.method) {
     case 'HEAD':
