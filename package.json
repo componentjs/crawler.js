@@ -1,7 +1,7 @@
 {
   "name": "component-crawler",
   "description": "registry that crawls github users",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": {
     "name": "Jonathan Ong",
     "email": "me@jongleberry.com",
@@ -9,14 +9,7 @@
     "twitter": "https://twitter.com/jongleberry"
   },
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/component/crawler.js.git"
-  },
-  "bugs": {
-    "mail": "me@jongleberry.com",
-    "url": "https://github.com/component/crawler.js/issues"
-  },
+  "repository": "component/crawler.js",
   "dependencies": {
     "knox": "~0.8.9",
     "co": "^3.0.5",
