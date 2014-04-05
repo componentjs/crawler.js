@@ -4,6 +4,15 @@ http://component-crawler.herokuapp.com/
 
 Crawl github users for components. Only works with Chrome right now due to a lack of vendor prefixing.
 
+Some notes:
+
+- It skips `component.json`s with `private: true`.
+- It skips repositories with issues disabled.
+- It tries to skip bare repositories, but sometimes fails.
+- The `.version` could be wrong if not updated correctly (the crawler only checks `master`).
+- GitHub data is added as `.github` to each `component.json`.
+- Watcher counts are not included because GitHub's search API does not include that field.
+
 ## API
 
 ### GET /.json
