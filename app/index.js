@@ -13,7 +13,7 @@ app.use(require('koa-logger')());
 app.use(require('koa-compress')({
   flush: require('zlib').Z_SYNC_FLUSH,
 }));
-app.use(require('conditional-get')());
+app.use(require('koa-conditional-get')());
 app.use(require('koa-etag')());
 app.use(require('koa-json')({
   pretty: false,
