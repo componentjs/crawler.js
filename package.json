@@ -22,6 +22,7 @@
     "koa-static": "^1.4.3",
     "koa-logger": "^1.2.0",
     "koa-compress": "^1.0.3",
+    "koa-conditional-get": "^1.0.2",
     "finished": "^1.1.1",
     "parse-link-header": "~0.1.0",
     "yield-ratelimit-reset": "^1.0.0"
