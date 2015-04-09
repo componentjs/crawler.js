@@ -19,9 +19,9 @@ app.use(require('koa-json')({
   pretty: false,
   param: 'pretty',
 }));
-app.use(require('koa-static')(join(__dirname, '..', 'public'), {
+app.use(require('koa-static')('public'), {
   defer: true,
-}));
+});
 
 // GET the entire .json file
 app.use(function* (next) {
