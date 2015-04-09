@@ -51,7 +51,7 @@ app.use(function* (next) {
 app.use(function* (next) {
   if (this.request.path !== '/log') return yield* next;
 
-  this.req.setTimeout(Infinity);
+  this.req.setTimeout(Number.MAX_VALUE);
   this.response.type = 'text/event-stream';
   this.response.set('Access-Control-Allow-Origin', '*');
   this.response.set('Cache-Control', 'private');
