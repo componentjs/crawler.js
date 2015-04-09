@@ -38,6 +38,33 @@ Update all the components of a user.
 
 Return a repo's `component.json`.
 
+
+## Development
+
+### Setup
+
+- create an AWS [S3](http://aws.amazon.com/en/s3/) bucket
+- create an AWS [IAM](http://aws.amazon.com/en/iam/) user 
+  - copy the ACCESS KEY and the SECRET
+  - apply the __AmazonS3FullAccess__ policy to the user
+- run these commands in your terminal:
+
+```
+$ export S3_KEY='<YOUR_KEY>'
+$ export S3_SECRET='<YOUR_SECRET>'
+$ export S3_BUCKET='<YOUR_BUCKET_NAME>'
+```
+
+### Test
+
+`npm test`
+
+### Start the app
+
+`npm start` then open `localhost:3000` in your browser.
+At the `localhost:3000/` you can type in a github username or organisation at the bottom and
+after a while you can see the result at `localhost:3000/.json`
+
 ## License
 
 The MIT License (MIT)
