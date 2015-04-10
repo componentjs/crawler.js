@@ -50,9 +50,9 @@ Return a repo's `component.json`.
 - run these commands in your terminal:
 
 ```
-$ export S3_KEY='<YOUR_KEY>'
-$ export S3_SECRET='<YOUR_SECRET>'
-$ export S3_BUCKET='<YOUR_BUCKET_NAME>'
+export S3_KEY='<YOUR_KEY>'
+export S3_SECRET='<YOUR_SECRET>'
+export S3_BUCKET='<YOUR_BUCKET_NAME>'
 ```
 
 ### Test
