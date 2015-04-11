@@ -43,7 +43,7 @@ Return a repo's `component.json`.
 
 ### Setup
 
-- create an AWS [S3](http://aws.amazon.com/en/s3/) bucket
+- create an AWS [S3](http://aws.amazon.com/en/s3/) bucket in the __US Standard__ region
 - create an AWS [IAM](http://aws.amazon.com/en/iam/) user 
   - copy the ACCESS KEY and the SECRET
   - apply the __AmazonS3FullAccess__ policy to the user
